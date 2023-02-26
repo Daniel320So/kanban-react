@@ -13,10 +13,10 @@ const ColumnColor: Record<ColumnType, string> = {
 
 function Column({column}: {column: ColumnType}) {
 
-    const {tasks, addNewTask} = useColumnTask(column);
+    const {tasks, addNewTask, updateTask, deleteTask} = useColumnTask(column);
 
     const conlumnTasks = tasks.map( (t, index) => {
-        return <Task key={t.id} index={index} task={t}></Task>
+        return <Task key={t.id} index={index} task={t} onDelete={deleteTask} onUpdate ={updateTask}></Task>
     })
     return (
         <div className="column">
