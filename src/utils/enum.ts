@@ -4,3 +4,7 @@ export enum ColumnType {
     DOING = "Doing",
     DONE = "Done"
 }
+
+export enum ItemType {
+    TASK = "Task"
+}

@@ -54,11 +54,28 @@ function useColumnTask(column:ColumnType) {
         }, [column, setTasks]
     )
 
+    const dropTaskFrom = useCallback((from: ColumnType, id: TaskModel["id"]) => {
+        setTasks((allTasks) => {
+            const fromColumnTasks = allTasks[from];
+            const toColumnTasks = allTasks[column];
+            const movingTask = fromColumnTasks.find(task => task.id === id)
+
+            if (!movingTask) return allTasks;
+
+            return {
+                ...allTasks,
+                [from]: fromColumnTasks.filter(task => task.id !== id),
+                [column]: [{ ...movingTask, column}, ...toColumnTasks]
+            }
+        })
+    }, [column, setTasks])
+
     return {
         tasks: tasks[column],
         addNewTask,
         updateTask,
-        deleteTask
+        deleteTask,
+        dropTaskFrom
     };
 };
 
