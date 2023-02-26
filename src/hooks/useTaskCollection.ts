@@ -8,24 +8,24 @@ function useTaskCollection() {
         Backlog: [
             {
                 id: uuidv4(),
-                title: "Create a TS React Tempalte",
-                description: "Create the template with react npx command",
+                title: "Implement Swap Task Features",
+                description: "Able to swap task in the same column",
                 column: ColumnType.BACKLOG
             },
         ],
         Todo: [
             {
                 id: uuidv4(),
-                title: "Create a TS React Tempalte",
-                description: "Create the template with react npx command",
+                title: "Implement Drag and Drop Features",
+                description: "Able to drag task from 1 column to another column",
                 column: ColumnType.TO_DO
             },
         ],
         Doing: [
             {
                 id: uuidv4(),
-                title: "Create a TS React Tempalte",
-                description: "Create the template with react npx command",
+                title: "Add CSS ",
+                description: "Add Css to style the UI",
                 column: ColumnType.DOING
             },
             {
