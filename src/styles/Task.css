@@ -1,0 +1,42 @@
+.Task {
+    background-color: lightyellow;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    width: 85%;
+    border-radius: 15px;
+    padding: 10px 5%;
+    cursor: pointer;
+}
+
+.Task-Header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.Task-Header textarea {
+    width: 75%;
+    font-size: 1.25em;
+    color:brown
+}
+
+.Task textarea {
+    border: none;
+    background-color: transparent;
+    resize: none;
+}
+
+.Task-Header > button {
+    font-size: 1em !important;
+    border: none;
+    background-color: transparent;
+    justify-self: end;
+}
+
+.Task-Header > button:hover {
+    color:red !important;
+}
+
+

@@ -13,9 +13,8 @@ function useColumnTask(column:ColumnType) {
             const columnTasks = allTasks[column];
             const newColumnTask: TaskModel = {
                 id: uuidv4(),
-                title: "New Task",
-                description: "Create the template with react npx command",
-                assignees: ["Daniel"],
+                title: "New Task in " + column,
+                description: "Please type the description here",
                 column: column
             }
 

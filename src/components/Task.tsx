@@ -1,5 +1,7 @@
 import { useTaskDragAndDrop } from "../hooks/useTaskDragAndDrop";
 import { TaskModel } from "../utils/model";
+import { CiCircleRemove } from "react-icons/ci";
+import '../styles/Task.css';
 
 type TaskProps = {
     index: number;
@@ -29,11 +31,12 @@ function Task({index, task, onUpdate: handleUpdate, onDelete: handleDelete}:Task
     }
 
     return (
-        <div className="task" ref={ref} style={style} >
-            <textarea onChange={handleTitleChange}>{task.title}</textarea>
-            <textarea value={task.description}></textarea>
-            <p>Assigned To: {task.assignees.toString()}</p>
-            <button onClick={handleDeleteClick}>Delete</button>
+        <div className="Task" ref={ref} style={style} >
+            <div className="Task-Header">
+                <textarea className="Title" onChange={handleTitleChange}>{task.title}</textarea>
+                <button onClick={handleDeleteClick}><CiCircleRemove/></button>
+            </div>
+            <textarea className="Description" value={task.description}></textarea>
         </div>
     )
 }

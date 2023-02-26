@@ -1,16 +1,8 @@
 import useColumnDrop from "../hooks/useColumnDrop";
 import useColumnTask from "../hooks/useColumnTask";
 import { ColumnType } from "../utils/enum";
-import { TaskModel } from "../utils/model";
 import Task from "./Task";
-
-const ColumnColor: Record<ColumnType, string> = {
-    Backlog: "red",
-    Todo: "green",
-    Doing: "blue",
-    Done: "white"
-}
-
+import '../styles/Column.css';
 
 function Column({column}: {column: ColumnType}) {
 
@@ -26,10 +18,12 @@ function Column({column}: {column: ColumnType}) {
         return <Task key={t.id} index={index} task={t} onDelete={deleteTask} onUpdate ={updateTask}></Task>
     })
     return (
-        <div className="column" ref={dropRef} style={style}>
+        <div className="Column" ref={dropRef} style={style}>
             <h2>{column}</h2>
-            <button onClick={addNewTask}>Add</button>
-            {conlumnTasks}
+            <div className = "Task-Container">
+                {conlumnTasks}
+            </div>
+            <button className="Add-Column" onClick={addNewTask}>Add a new task</button>
         </div>
     )
 }

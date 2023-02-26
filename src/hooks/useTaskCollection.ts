@@ -10,7 +10,6 @@ function useTaskCollection() {
                 id: uuidv4(),
                 title: "Create a TS React Tempalte",
                 description: "Create the template with react npx command",
-                assignees: ["Daniel", "Winsy"],
                 column: ColumnType.BACKLOG
             },
         ],
@@ -19,7 +18,6 @@ function useTaskCollection() {
                 id: uuidv4(),
                 title: "Create a TS React Tempalte",
                 description: "Create the template with react npx command",
-                assignees: ["Daniel", "Winsy"],
                 column: ColumnType.TO_DO
             },
         ],
@@ -28,14 +26,12 @@ function useTaskCollection() {
                 id: uuidv4(),
                 title: "Create a TS React Tempalte",
                 description: "Create the template with react npx command",
-                assignees: ["Daniel", "Winsy"],
                 column: ColumnType.DOING
             },
             {
                 id: uuidv4(),
                 title: "Create Components",
                 description: "Create Task and Column components",
-                assignees: ["Daniel", "Winsy"],
                 column: ColumnType.DOING
             }
         ],
@@ -44,7 +40,6 @@ function useTaskCollection() {
                 id: uuidv4(),
                 title: "Create a TS React Tempalte",
                 description: "Create the template with react npx command",
-                assignees: ["Daniel"],
                 column: ColumnType.DONE
             },
         ]

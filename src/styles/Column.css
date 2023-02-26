@@ -1,0 +1,32 @@
+.Column {
+    height: 600px;
+    border: 1px solid;
+    width: 20%;
+    background-color: #ebecf0;
+    border-radius: 10px;
+}
+
+.Add-Column {
+    width: 100%;
+    height: 10%;
+}
+
+.Task-Container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.Column button {
+    font-size: 0.75em;
+    border: none;
+    background-color: transparent;
+}
+
+.Column button:hover {
+    color: green;
+    text-decoration: underline;
+    cursor:pointer;
+}
