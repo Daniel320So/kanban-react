@@ -11,7 +11,6 @@ function App() {
       <header className="App-header">
         <h1>Kanban Board</h1>
       </header>
-      <body>
         <DndProvider backend={HTML5Backend}>
           <div className="Kanban-Container">
             <Column column={ColumnType.BACKLOG}></Column>
@@ -20,7 +19,6 @@ function App() {
             <Column column={ColumnType.DONE}></Column>
           </div>
         </DndProvider>
-      </body>
     </div>
   );
 }

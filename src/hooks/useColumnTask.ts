@@ -8,7 +8,6 @@ function useColumnTask(column:ColumnType) {
     const [tasks, setTasks] = useTaskCollection();
 
     const addNewTask = useCallback(() => {
-        console.log("Add Task")
         setTasks((allTasks) => {
             const columnTasks = allTasks[column];
             const newColumnTask: TaskModel = {
@@ -20,7 +19,7 @@ function useColumnTask(column:ColumnType) {
 
             return {
                 ...allTasks,
-                [column]: [newColumnTask, ...columnTasks]
+                [column]: [...columnTasks, newColumnTask]
             }
         })
     }, [column, setTasks]);

@@ -29,7 +29,7 @@
 }
 
 .Task-Header > button {
-    font-size: 1em !important;
+    font-size: 1.25em !important;
     border: none;
     background-color: transparent;
     justify-self: end;

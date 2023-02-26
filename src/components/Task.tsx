@@ -22,6 +22,11 @@ function Task({index, task, onUpdate: handleUpdate, onDelete: handleDelete}:Task
         handleUpdate(task.id, {...task, title:newTitle})
     }
 
+    const handleDescriptionChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        const newDescription = e.target.value;
+        handleUpdate(task.id, {...task, description:newDescription})
+    }
+
     const handleDeleteClick = () => {
         handleDelete(task.id);
     }
@@ -33,10 +38,10 @@ function Task({index, task, onUpdate: handleUpdate, onDelete: handleDelete}:Task
     return (
         <div className="Task" ref={ref} style={style} >
             <div className="Task-Header">
-                <textarea className="Title" onChange={handleTitleChange}>{task.title}</textarea>
+                <textarea className="Title" onChange={handleTitleChange} value={task.title}></textarea>
                 <button onClick={handleDeleteClick}><CiCircleRemove/></button>
             </div>
-            <textarea className="Description" value={task.description}></textarea>
+            <textarea className="Description" onChange={handleDescriptionChange} value={task.description}></textarea>
         </div>
     )
 }
