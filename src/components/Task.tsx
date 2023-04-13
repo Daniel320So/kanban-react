@@ -5,17 +5,17 @@ import '../styles/Task.css';
 
 type TaskProps = {
     index: number;
+    column: string;
     task: TaskModel;
     onUpdate: (id: TaskModel["id"], updateTask: TaskModel) => void;
     onDelete: (id: TaskModel["id"]) => void;
 };
 
-function Task({index, task, onUpdate: handleUpdate, onDelete: handleDelete}:TaskProps) {
+function Task({index, column, task, onUpdate: handleUpdate, onDelete: handleDelete}:TaskProps) {
 
     const {ref, isDragging } = useTaskDragAndDrop<HTMLDivElement>({
         task, index
     });
-
 
     const handleTitleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         const newTitle = e.target.value;
@@ -36,10 +36,10 @@ function Task({index, task, onUpdate: handleUpdate, onDelete: handleDelete}:Task
     }
 
     return (
-        <div className="Task" ref={ref} style={style} >
+        <div className="Task" id={task.id} ref={ref} style={style} >
             <div className="Task-Header">
-                <textarea aria-label={"Task Title"} className="Title" onChange={handleTitleChange} value={task.title}></textarea>
-                <button aria-label={"Remove" + task.title}onClick={handleDeleteClick}><CiCircleRemove/></button>
+                <textarea aria-label={column + "Task"} className="Title" onChange={handleTitleChange} value={task.title}></textarea>
+                <button aria-label={"Remove" + task.title} onClick={handleDeleteClick}><CiCircleRemove/></button>
             </div>
             <textarea aria-label={"Task Description"} className="Description" onChange={handleDescriptionChange} value={task.description}></textarea>
         </div>

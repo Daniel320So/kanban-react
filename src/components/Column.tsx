@@ -15,15 +15,15 @@ function Column({column}: {column: ColumnType}) {
     }
 
     const conlumnTasks = tasks.map( (t, index) => {
-        return <Task key={t.id} index={index} task={t} onDelete={deleteTask} onUpdate ={updateTask}></Task>
+        return <Task key={t.id} column={column} index={index} task={t} onDelete={deleteTask} onUpdate ={updateTask} ></Task>
     })
     return (
         <div className="Column" ref={dropRef} style={style}>
             <h2 aria-label={"Tasks in " + column}>{column}</h2>
+            <button className="Add-Column" aria-label={"Add a new task in " + column} onClick={addNewTask}>Add a new task</button>
             <div className = "Task-Container">
                 {conlumnTasks}
             </div>
-            <button className="Add-Column" aria-label={"Add a new task in " + column} onClick={addNewTask}>Add a new task</button>
         </div>
     )
 }
