@@ -38,10 +38,10 @@ function Task({index, task, onUpdate: handleUpdate, onDelete: handleDelete}:Task
     return (
         <div className="Task" ref={ref} style={style} >
             <div className="Task-Header">
-                <textarea className="Title" onChange={handleTitleChange} value={task.title}></textarea>
-                <button onClick={handleDeleteClick}><CiCircleRemove/></button>
+                <textarea aria-label={"Task Title"} className="Title" onChange={handleTitleChange} value={task.title}></textarea>
+                <button aria-label={"Remove" + task.title}onClick={handleDeleteClick}><CiCircleRemove/></button>
             </div>
-            <textarea className="Description" onChange={handleDescriptionChange} value={task.description}></textarea>
+            <textarea aria-label={"Task Description"} className="Description" onChange={handleDescriptionChange} value={task.description}></textarea>
         </div>
     )
 }

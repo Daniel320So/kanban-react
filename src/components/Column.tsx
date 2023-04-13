@@ -19,11 +19,11 @@ function Column({column}: {column: ColumnType}) {
     })
     return (
         <div className="Column" ref={dropRef} style={style}>
-            <h2>{column}</h2>
+            <h2 aria-label={"Tasks in " + column}>{column}</h2>
             <div className = "Task-Container">
                 {conlumnTasks}
             </div>
-            <button className="Add-Column" onClick={addNewTask}>Add a new task</button>
+            <button className="Add-Column" aria-label={"Add a new task in " + column} onClick={addNewTask}>Add a new task</button>
         </div>
     )
 }
