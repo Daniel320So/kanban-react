@@ -19,7 +19,7 @@ function useColumnTask(column:ColumnType) {
 
             return {
                 ...allTasks,
-                [column]: [...columnTasks, newColumnTask]
+                [column]: [newColumnTask, ...columnTasks]
             }
         })
     }, [column, setTasks]);
